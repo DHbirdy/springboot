@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baizhi.dao.OrderDao">
+    <insert id="saveOrder" parameterType="com.baizhi.entity.Ticket">
+        insert into ticket_info
+        values (#{name},#{id},#{departure},#{destination},#{flightNum},#{phone},#{time})
+    </insert>
+
+    <select id="findOrders" resultType="com.baizhi.entity.Ticket">
+        select *
+        from ticket_info
+    </select>
+</mapper>
