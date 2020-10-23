@@ -31,4 +31,9 @@ public class OrderServiceImpl implements OrderService {
     public List<Ticket> findOrders() {
         return orderDao.findOrders();
     }
+
+    @Override
+    public void deleteOrder(String name) {
+        orderDao.deleteOrder(name);
+    }
 }

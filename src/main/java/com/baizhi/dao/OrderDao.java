@@ -18,4 +18,8 @@ public interface OrderDao {
 
     //查询所有订单
     List<Ticket> findOrders();
+
+    //根据姓名删除订单
+    void deleteOrder(String name);
+
 }

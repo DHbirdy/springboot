@@ -40,4 +40,18 @@ public class OrderController {
     public List<Ticket> findOrders(){
         return orderService.findOrders();
     }
+
+    @GetMapping("deleteOrder")
+    public Result deleteOrder(String name){
+        Result result = new Result();
+        try {
+            orderService.deleteOrder(name);
+            result.setMsg("成功删除订单信息");
+        } catch (Exception e) {
+            e.printStackTrace();
+            result.setStatus(false);
+            result.setMsg("删除订单信息失败");
+        }
+        return result;
+    }
 }

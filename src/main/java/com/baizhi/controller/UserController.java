@@ -46,13 +46,13 @@ public class UserController {
     @PostMapping("saveOrUpdate")
     public Result saveOrUpdate(@RequestBody User user){
         Result result = new Result();
-        Document document = creatDocument(user);
-        try {
-            writeDocument(document,user);
-        } catch (IOException e) {
-            result.setMsg("文件写入失败");
-            result.setStatus(false);
-        }
+//        Document document = creatDocument(user);
+//        try {
+//            writeDocument(document,user);
+//        } catch (IOException e) {
+//            result.setMsg("文件写入失败");
+//            result.setStatus(false);
+//        }
         try {
             //前端传入的对象参数有id说明是添加操作，否则是修改操作
             if(StringUtils.isEmpty(user.getId())) {

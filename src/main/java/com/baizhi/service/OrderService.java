@@ -16,4 +16,7 @@ public interface OrderService {
 
     //查询所有订单
     List<Ticket> findOrders();
+
+    //删除订单
+    void deleteOrder(String name);
 }

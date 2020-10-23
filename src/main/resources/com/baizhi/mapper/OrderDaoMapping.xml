@@ -4,11 +4,15 @@
 <mapper namespace="com.baizhi.dao.OrderDao">
     <insert id="saveOrder" parameterType="com.baizhi.entity.Ticket">
         insert into ticket_info
-        values (#{name},#{id},#{departure},#{destination},#{flightNum},#{phone},#{time})
+        values (#{name},#{id},#{departure},#{destination},#{flightNum},#{phone},#{time},#{sex})
     </insert>
 
     <select id="findOrders" resultType="com.baizhi.entity.Ticket">
         select *
         from ticket_info
     </select>
+
+    <delete id="deleteOrder" parameterType="String">
+        delete from ticket_info where name = #{name}
+    </delete>
 </mapper>
